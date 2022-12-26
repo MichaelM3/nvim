@@ -2,6 +2,7 @@
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
+vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
 
 -- Move whole line
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
