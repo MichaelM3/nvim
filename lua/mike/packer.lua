@@ -48,13 +48,17 @@ return require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
-  use {
-      'nvim-tree/nvim-tree.lua',
-      requires = {
-          'nvim-tree/nvim-web-devicons', -- optional, for file icons
-      },
-      tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
+  -- use {
+  --     'nvim-tree/nvim-tree.lua',
+  --     requires = {
+  --         'nvim-tree/nvim-web-devicons', -- optional, for file icons
+  --     },
+  --     tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  -- }
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
   use "numToStr/Comment.nvim"
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
 end)
