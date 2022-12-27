@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
 
   -- TREESITTER
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use('p00f/nvim-ts-rainbow')
   use('nvim-treesitter/playground')
 
   use('theprimeagen/harpoon')
