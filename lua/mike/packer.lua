@@ -15,8 +15,9 @@ return require('packer').startup(function(use)
 
   -- COLORSCHEMES
   use 'navarasu/onedark.nvim'
-  use { 'sonph/onehalf', rtp = 'vim' } 
+  use { 'sonph/onehalf', rtp = 'vim' }
   use 'folke/tokyonight.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- TREESITTER
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
