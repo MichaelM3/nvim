@@ -24,6 +24,6 @@ vim.cmd.colorscheme "catppuccin"
 -- -- Lua
 -- vim.cmd[[colorscheme tokyonight]]
 vim.cmd[[highlight LineNr guifg=#FCAE1E]]
--- vim.cmd[[hi NvimTreeNormal guibg=NONE ctermbg=NONE]]
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- vim.cmd[[hi NvimTreeNormal guibg=NONE ctermbg=NONE]]
