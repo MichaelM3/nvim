@@ -15,7 +15,7 @@
 
 -- ColorMyPencils()
 
-vim.cmd.colorscheme "catppuccin"
+-- vim.cmd.colorscheme "catppuccin"
 
 -- require('tokyonight').setup({
 -- 	style = "night",
@@ -23,7 +23,7 @@ vim.cmd.colorscheme "catppuccin"
 -- })
 -- -- Lua
 -- vim.cmd[[colorscheme tokyonight]]
-vim.cmd[[highlight LineNr guifg=#FCAE1E]]
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- vim.cmd[[highlight LineNr guifg=#FCAE1E]]
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 -- vim.cmd[[hi NvimTreeNormal guibg=NONE ctermbg=NONE]]

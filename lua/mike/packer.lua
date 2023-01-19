@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
     use('p00f/nvim-ts-rainbow')
     use('nvim-treesitter/playground')
 
-    use('theprimeagen/harpoon')
+    -- use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
 
@@ -50,14 +50,14 @@ return require('packer').startup(function(use)
             { 'rafamadriz/friendly-snippets' },
         }
     }
-    -- use {
-    --     'nvim-tree/nvim-tree.lua',
-    --     requires = {
-    --         'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    --     },
-    --     tag = 'nightly' -- optional, updated every week. (see issue #1193)
-    -- }
-    -- use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
+    use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
     use "numToStr/Comment.nvim"
     use {
         'nvim-lualine/lualine.nvim',
