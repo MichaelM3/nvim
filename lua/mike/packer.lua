@@ -70,4 +70,5 @@ return require('packer').startup(function(use)
     }
     use "windwp/nvim-ts-autotag"
     use "rrethy/nvim-treesitter-endwise"
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
 end)
