@@ -35,21 +35,6 @@ require 'nvim-treesitter.configs'.setup {
     },
     context_commentstring = {
         enable = true,
-        autocmd = false,
-        -- config = {
-        --     javascript = {
-        --         _default = '// %s',
-        --         jsx_element = '{/* %s */}',
-        --         jsx_fragment = '{/* %s */}',
-        --         jsx_attribute = '// %s',
-        --     },
-        --     typescript = {
-        --         _default = '// %s',
-        --         tsx_element = '{/* %s */}',
-        --         tsx_fragment = '{/* %s */}',
-        --         tsx_attribute = '// %s',
-        --     }
-        -- }
-
+        enable_autocmd = false,
     }
 }
