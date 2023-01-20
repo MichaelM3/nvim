@@ -69,4 +69,5 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
     use "windwp/nvim-ts-autotag"
+    use "rrethy/nvim-treesitter-endwise"
 end)
