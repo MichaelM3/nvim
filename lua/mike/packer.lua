@@ -71,4 +71,9 @@ return require('packer').startup(function(use)
     use "windwp/nvim-ts-autotag"
     use "rrethy/nvim-treesitter-endwise"
     use 'JoosepAlviste/nvim-ts-context-commentstring'
+    use 'mfussenegger/nvim-dap'
+    use 'mfussenegger/nvim-dap-python'
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use 'theHamsta/nvim-dap-virtual-text'
+    use 'nvim-telescope/telescope-dap.nvim'
 end)

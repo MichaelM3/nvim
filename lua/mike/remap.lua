@@ -34,7 +34,7 @@ vim.keymap.set("i", "<C-c>", "<ESC>")
 vim.keymap.set("n", "Q", "<nop>")
 
 -- Switch project with tmux session
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux new tmux-sessionizer<CR>")
 
 -- Format
 vim.keymap.set("n", "<leader>f", function()
