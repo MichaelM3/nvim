@@ -122,6 +122,9 @@ return {
             capabilities = capabilities,
             on_attach = on_attach,
             filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+            root_dir = function (fname)
+               return lspconfig.util.path.dirname(fname)
+            end
         })
 
         -- configure emmet language server
@@ -145,6 +148,12 @@ return {
 
         -- configure rust server
         lspconfig["rust_analyzer"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        -- configure terraform server
+        lspconfig["terraformls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })

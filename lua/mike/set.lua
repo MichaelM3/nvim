@@ -1,36 +1,34 @@
--- vim.opt.guicursor = ""
-vim.opt.cmdheight = 1
-vim.opt.cursorline = true
-vim.opt.cursorlineopt = "number"
+local function set_options(opts)
+    for k, v in pairs(opts) do
+        vim.opt[k] = v
+    end
+end
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
+set_options({
+    -- guicursor = ""
+    cmdheight = 1,
+    cursorline = true,
+    cursorlineopt = "number",
+    nu = true,
+    relativenumber = true,
+    tabstop = 4,
+    softtabstop = 4,
+    shiftwidth = 4,
+    expandtab = true,
+    smartindent = true,
+    wrap = false,
+    swapfile = false,
+    backup = false,
+    undodir = os.getenv("HOME") .. "/.vim/undodir",
+    undofile = true,
+    hlsearch = false,
+    incsearch = true,
+    termguicolors = true,
+    scrolloff = 8,
+    signcolumn = "yes",
+    updatetime = 50,
+    colorcolumn = "80"
+})
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-
-vim.opt.smartindent = true
-
-vim.opt.wrap = false
-
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
-
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
-
-vim.opt.updatetime = 50
-
-vim.opt.colorcolumn = "80"
-
 vim.g.mapleader = " "
