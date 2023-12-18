@@ -65,3 +65,6 @@ map("n", "<C-l>", "<C-w>l")
 map("n", "<S-h>", "<cmd>bprev<CR>")
 map("n", "<S-l>", "<cmd>bnext<CR>")
 map("n", "<leader>c", "<cmd>bd<CR>")
+
+-- Lazy Commands
+map("n", "<leader>L", "<cmd>Lazy<CR>")
