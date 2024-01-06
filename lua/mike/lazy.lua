@@ -13,13 +13,22 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "mike.plugins" }, { import = "mike.plugins.lsp" } }, {
     install = {
-        colorscheme = { "nightfly" },
+        colorscheme = { "rose-pine" },
+    },
+    ui = {
+        border = "rounded",
     },
     checker = {
         enabled = true,
         notify = false,
     },
     change_detection = {
+        enabled = true,
         notify = false,
     },
 })
+
+-- Lazy Commands
+local opts = { noremap = true, silent = true }
+
+vim.keymap.set("n", "<leader>L", "<cmd>Lazy<CR>", opts)

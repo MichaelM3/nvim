@@ -71,8 +71,5 @@ keymap("n", "<S-h>", "<cmd>bprev<CR>", opts)
 keymap("n", "<S-l>", "<cmd>bnext<CR>", opts)
 keymap("n", "<leader>c", "<cmd>bd<CR>", opts)
 
--- Lazy Commands
-keymap("n", "<leader>L", "<cmd>Lazy<CR>", opts)
-
 -- Terminal Nav Mode
 keymap("t", "<C-;>", "<C-\\><C-n>", opts)
