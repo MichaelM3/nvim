@@ -1,70 +1,71 @@
-local map = vim.keymap.set
+local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 -- Explorer
-map("n", "<leader>pv", vim.cmd.Ex)
-map("i", "jk", "<ESC>")
-map("n", "<leader>q", "<cmd>q<CR>")
-map("n", "<leader>w", "<cmd>w!<CR>")
+-- keymap("n", "<leader>pv", vim.cmd.Ex)
+keymap("i", "jk", "<ESC>", opts)
+keymap("n", "<leader>q", "<cmd>q<CR>", opts)
+keymap("n", "<leader>w", "<cmd>w!<CR>", opts)
 
 -- Move whole line
-map("v", "J", ":m '>+1<CR>gv=gv")
-map("v", "K", ":m '<-2<CR>gv=gv")
+keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 -- Move current line to previous line with space
-map("n", "J", "mzJ`Z")
+keymap("n", "J", "mzJ`Z", opts)
 
 -- Jump to middle of page (Keeps cursor centered)
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
 
 -- Next and previous search (Keeps cursor centered)
-map("n", "n", "nzzzv")
-map("n", "N", "Nzzzv")
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
 
 -- Can paste over word, and not lose clipboard register of word
-map("x", "<leader>p", "\"_dP")
+keymap("x", "<leader>p", "\"_dP", opts)
 
 -- Access system clipboard and copy
-map("n", "<leader>y", "\"+y")
-map("v", "<leader>y", "\"+y")
-map("n", "<leader>Y", "\"+Y")
+keymap("n", "<leader>y", "\"+y", opts)
+keymap("v", "<leader>y", "\"+y", opts)
+keymap("n", "<leader>Y", "\"+Y", opts)
 
 -- Rebind Ctrl-c to the ESC key
-map("i", "<C-c>", "<ESC>")
+keymap("i", "<C-c>", "<ESC>", opts)
 
 -- Unbind Q to exit
-map("n", "Q", "<nop>")
+keymap("n", "Q", "<nop>", opts)
 
 -- Switch project with tmux session
-map("n", "<C-f>", "<cmd>silent !tmux new tmux-sessionizer<CR>")
+keymap("n", "<C-f>", "<cmd>silent !tmux new tmux-sessionizer<CR>", opts)
 
 -- Format
-map("n", "<leader>f", function()
+keymap("n", "<leader>f", function()
     vim.lsp.buf.format()
-end)
+end, opts)
 
 -- Quickfix list commands
-map("n", "<C-k>", "<cmd>cnext<CR>zz")
-map("n", "<C-j>", "<cmd>cprev<CR>zz")
-map("n", "<leader>k", "<cmd>lnext<CR>zz")
-map("n", "<leader>j", "<cmd>lprev<CR>zz")
+keymap("n", "<C-k>", "<cmd>cnext<CR>zz", opts)
+keymap("n", "<C-j>", "<cmd>cprev<CR>zz", opts)
+keymap("n", "<leader>k", "<cmd>lnext<CR>zz", opts)
+keymap("n", "<leader>j", "<cmd>lprev<CR>zz", opts)
 
 -- Replace all occurrences of hovered word
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 -- Pane Controls
-map("n", "<leader>wv", "<C-w>v")
-map("n", "<leader>wh", "<C-w>s")
-map("n", "<leader>wc", "<C-w>c")
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-j>", "<C-w>j")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-l>", "<C-w>l")
+keymap("n", "<leader>wv", "<C-w>v", opts)
+keymap("n", "<leader>wh", "<C-w>s", opts)
+keymap("n", "<leader>wc", "<C-w>c", opts)
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Bufferline Remaps
-map("n", "<S-h>", "<cmd>bprev<CR>")
-map("n", "<S-l>", "<cmd>bnext<CR>")
-map("n", "<leader>c", "<cmd>bd<CR>")
+keymap("n", "<S-h>", "<cmd>bprev<CR>", opts)
+keymap("n", "<S-l>", "<cmd>bnext<CR>", opts)
+keymap("n", "<leader>c", "<cmd>bd<CR>", opts)
 
 -- Lazy Commands
-map("n", "<leader>L", "<cmd>Lazy<CR>")
+keymap("n", "<leader>L", "<cmd>Lazy<CR>", opts)
