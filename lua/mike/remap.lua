@@ -22,6 +22,10 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 
+-- Stay in indent mode
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
+
 -- Can paste over word, and not lose clipboard register of word
 keymap("x", "<leader>p", "\"_dP", opts)
 
@@ -69,3 +73,6 @@ keymap("n", "<leader>c", "<cmd>bd<CR>", opts)
 
 -- Lazy Commands
 keymap("n", "<leader>L", "<cmd>Lazy<CR>", opts)
+
+-- Terminal Nav Mode
+keymap("t", "<C-;>", "<C-\\><C-n>", opts)
