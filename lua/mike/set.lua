@@ -28,7 +28,7 @@ set_options({
     signcolumn = "yes",
     updatetime = 50,
     colorcolumn = "80",
-    showtabline = 1
+    -- showtabline = 2
 })
 
 vim.opt.isfname:append("@-@")
