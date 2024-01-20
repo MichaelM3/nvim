@@ -6,7 +6,7 @@ end
 
 set_options({
     -- guicursor = ""
-    cmdheight = 1,
+    cmdheight = 0,
     cursorline = true,
     cursorlineopt = "number",
     nu = true,

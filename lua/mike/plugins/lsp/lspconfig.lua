@@ -82,6 +82,13 @@ return {
             on_attach = on_attach,
         })
 
+        -- -- configure emmet language server
+        -- lspconfig["emmet_ls"].setup({
+        --     capabilities = capabilities,
+        --     on_attach = on_attach,
+        --     filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+        -- })
+
         -- configure css server
         lspconfig["cssls"].setup({
             capabilities = capabilities,
@@ -125,13 +132,6 @@ return {
             root_dir = function (fname)
                return lspconfig.util.path.dirname(fname)
             end
-        })
-
-        -- configure emmet language server
-        lspconfig["emmet_ls"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-            filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
         })
 
         -- configure python server

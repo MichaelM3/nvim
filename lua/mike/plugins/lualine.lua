@@ -52,7 +52,7 @@ return {
         -- configure lualine with modified theme
         lualine.setup({
             options = {
-                theme = "rose-pine",
+                theme = "catppuccin",
             },
             sections = {
                 lualine_x = {

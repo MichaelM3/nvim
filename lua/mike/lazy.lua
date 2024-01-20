@@ -31,4 +31,7 @@ require("lazy").setup({ { import = "mike.plugins" }, { import = "mike.plugins.ls
 -- Lazy Commands
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set("n", "<leader>L", "<cmd>Lazy<CR>", opts)
+vim.keymap.set("n", "<leader>ll", "<cmd>Lazy<CR>", opts)
+vim.keymap.set("n", "<leader>lu", "<cmd>Lazy update<CR>", opts)
+vim.keymap.set("n", "<leader>lc", "<cmd>Lazy clean<CR>", opts)
+vim.keymap.set("n", "<leader>ld", "<cmd>Lazy debug<CR>", opts)

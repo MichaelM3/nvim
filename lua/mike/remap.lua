@@ -48,6 +48,8 @@ keymap("n", "<leader>f", function()
     vim.lsp.buf.format()
 end, opts)
 
+keymap("n", "<leader>W", "<cmd>set wrap!<CR>", opts)
+
 -- Quickfix list commands
 keymap("n", "<C-k>", "<cmd>cnext<CR>zz", opts)
 keymap("n", "<C-j>", "<cmd>cprev<CR>zz", opts)
