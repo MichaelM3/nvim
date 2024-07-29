@@ -6,4 +6,6 @@ return {
     "inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion (gr + motion)
 
     "mfussenegger/nvim-jdtls",
+
+    { "Hoffs/omnisharp-extended-lsp.nvim", lazy = true }
 }
