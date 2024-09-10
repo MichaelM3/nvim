@@ -44,9 +44,9 @@ keymap("n", "Q", "<nop>", opts)
 keymap("n", "<C-f>", "<cmd>silent !tmux new tmux-sessionizer<CR>", opts)
 
 -- Format
-keymap("n", "<leader>f", function()
-    vim.lsp.buf.format()
-end, opts)
+-- keymap("n", "<leader>f", function()
+--     vim.lsp.buf.format()
+-- end, opts)
 
 keymap("n", "<leader>W", "<cmd>set wrap!<CR>", opts)
 
@@ -75,3 +75,6 @@ keymap("n", "<leader>c", "<cmd>bd<CR>", opts)
 
 -- Terminal Nav Mode
 keymap("t", "<C-;>", "<C-\\><C-n>", opts)
+
+-- Lazy Git
+keymap("n", "<leader>gg", "<cmd>LazyGit<CR>", opts)

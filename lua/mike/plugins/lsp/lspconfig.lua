@@ -64,10 +64,12 @@ return {
 
         -- Change the Diagnostic symbols in the sign column (gutter)
         -- (not in youtube nvim video)
-        local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-        for type, icon in pairs(signs) do
+        local newSigns = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+        for type, icon in pairs(newSigns) do
             local hl = "DiagnosticSign" .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+            vim.diagnostic.config({
+                signs = { hl, text = icon, texthl = hl, numhl = "" }
+            })
         end
 
         -- configure html server
@@ -77,9 +79,14 @@ return {
         })
 
         -- configure typescript server with plugin
-        lspconfig["tsserver"].setup({
+        lspconfig["ts_ls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            init_options = {
+                preferences = {
+                    disableSuggestions = false,
+                },
+            },
         })
 
         -- -- configure emmet language server
@@ -246,6 +253,10 @@ return {
                     },
                 },
             },
+        })
+        lspconfig["marksman"].setup({
+          capabilities = capabilities,
+          on_attach = on_attach,
         })
     end,
 }

@@ -5,15 +5,15 @@ local function set_options(opts)
 end
 
 set_options({
-    -- guicursor = ""
+    guicursor = "",
     cmdheight = 0,
     cursorline = true,
     cursorlineopt = "number",
     nu = true,
     relativenumber = true,
-    tabstop = 4,
-    softtabstop = 4,
-    shiftwidth = 4,
+    tabstop = 2,
+    softtabstop = 2,
+    shiftwidth = 2,
     expandtab = true,
     smartindent = true,
     wrap = false,
@@ -28,6 +28,9 @@ set_options({
     signcolumn = "yes",
     updatetime = 50,
     colorcolumn = "80",
+    laststatus = 3,
+    splitkeep = "screen",
+    conceallevel = 2,
     -- showtabline = 2
 })
 
