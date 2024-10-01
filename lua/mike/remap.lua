@@ -27,12 +27,12 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Can paste over word, and not lose clipboard register of word
-keymap("x", "<leader>p", "\"_dP", opts)
+keymap("x", "<leader>p", '"_dP', opts)
 
 -- Access system clipboard and copy
-keymap("n", "<leader>y", "\"+y", opts)
-keymap("v", "<leader>y", "\"+y", opts)
-keymap("n", "<leader>Y", "\"+Y", opts)
+keymap("n", "<leader>y", '"+y', opts)
+keymap("v", "<leader>y", '"+y', opts)
+keymap("n", "<leader>Y", '"+Y', opts)
 
 -- Rebind Ctrl-c to the ESC key
 keymap("i", "<C-c>", "<ESC>", opts)
@@ -78,3 +78,13 @@ keymap("t", "<C-;>", "<C-\\><C-n>", opts)
 
 -- Lazy Git
 keymap("n", "<leader>gg", "<cmd>LazyGit<CR>", opts)
+
+function YankInside()
+    local char = vim.fn.getcharstr()
+    vim.cmd("normal! vi" .. char)
+    vim.defer_fn(function ()
+        vim.cmd('normal! ' .. '"+y')
+    end, 50)
+end
+
+keymap("n", "<leader>v", ":lua YankInside()<CR>", opts)
