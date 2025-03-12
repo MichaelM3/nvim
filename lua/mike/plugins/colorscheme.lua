@@ -1,232 +1,68 @@
 return {
-    -- {
-    --     "rose-pine/neovim",
-    --     priority = 1000,
-    --     name = "rose-pine",
-    --     config = function()
-    --         require("rose-pine").setup({
-    --             --- @usage 'auto'|'main'|'moon'|'dawn'
-    --             variant = 'moon',
-    --             --- @usage 'main'|'moon'|'dawn'
-    --             dark_variant = 'moon',
-    --             bold_vert_split = true,
-    --             dim_inactive_windows = false,
-    --             extend_background_behind_borders = true,
-    --
-    --             enable = {
-    --                 terminal = true,
-    --                 legacy_highlights = true,
-    --                 migrations = true
-    --             },
-    --
-    --             styles = {
-    --                 bold = true,
-    --                 italic = true,
-    --                 transparency = false
-    --             },
-    --
-    --             --- @usage string hex value or named color from rosepinetheme.com/palette
-    --             groups = {
-    --                 border = "muted",
-    --                 link = "iris",
-    --                 panel = "surface",
-    --
-    --                 error = "love",
-    --                 hint = "iris",
-    --                 info = "foam",
-    --                 note = "pine",
-    --                 todo = "rose",
-    --                 warn = "gold",
-    --
-    --                 git_add = "foam",
-    --                 git_change = "rose",
-    --                 git_delete = "love",
-    --                 git_dirty = "rose",
-    --                 git_ignore = "muted",
-    --                 git_merge = "iris",
-    --                 git_rename = "pine",
-    --                 git_stage = "iris",
-    --                 git_text = "rose",
-    --                 git_untracked = "subtle",
-    --
-    --                 h1 = "iris",
-    --                 h2 = "foam",
-    --                 h3 = "rose",
-    --                 h4 = "gold",
-    --                 h5 = "pine",
-    --                 h6 = "foam",
-    --             },
-    --
-    --             -- Change specific vim highlight groups
-    --             -- https://github.com/rose-pine/neovim/wiki/Recipes
-    --             highlight_groups = {
-    --                 ColorColumn = { fg = 'rose', bg = 'rose', blend = 40 },
-    --
-    --                 -- Blend colours against the "base" background
-    --                 CursorLine = { bg = 'foam', blend = 10 },
-    --                 StatusLine = { fg = 'love', bg = 'love', blend = 10 },
-    --
-    --                 -- By default each group adds to the existing config.
-    --                 -- If you only want to set what is written in this config exactly,
-    --                 -- you can set the inherit option:
-    --                 Search = { bg = 'gold', inherit = false },
-    --             }
-    --         })
-    --         vim.cmd("colorscheme rose-pine-moon")
-    --     end
-    -- }
-    -- {
-    --     "catppuccin/nvim",
-    --     priority = 1000,
-    --     name = "catppuccin",
-    --     config = function()
-    --         require("catppuccin").setup({
-    --             flavour = "frappe", -- latte, frappe, macchiato, mocha
-    --             background = { -- :h background
-    --                 light = "latte",
-    --                 dark = "frappe",
-    --             },
-    --             transparent_background = false, -- disables setting the background color.
-    --             show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-    --             term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
-    --             dim_inactive = {
-    --                 enabled = false, -- dims the background color of inactive window
-    --                 shade = "dark",
-    --                 percentage = 0.15, -- percentage of the shade to apply to the inactive window
-    --             },
-    --             no_italic = false,  -- Force no italic
-    --             no_bold = false,    -- Force no bold
-    --             no_underline = false, -- Force no underline
-    --             styles = {          -- Handles the styles of general hi groups (see `:h highlight-args`):
-    --                 comments = { "italic" }, -- Change the style of comments
-    --                 conditionals = { "italic" },
-    --                 loops = {},
-    --                 functions = {},
-    --                 keywords = {},
-    --                 strings = {},
-    --                 variables = {},
-    --                 numbers = {},
-    --                 booleans = {},
-    --                 properties = {},
-    --                 types = {},
-    --                 operators = {},
-    --             },
-    --             color_overrides = {},
-    --             custom_highlights = {},
-    --             integrations = {
-    --                 cmp = true,
-    --                 gitsigns = true,
-    --                 nvimtree = true,
-    --                 treesitter = true,
-    --                 notify = false,
-    --                 mini = {
-    --                     enabled = true,
-    --                     indentscope_color = "",
-    --                 },
-    --                 -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-    --             },
-    --         })
-    --
-    --         -- setup must be called before loading
-    --         vim.cmd.colorscheme "catppuccin"
-    --     end
-    -- }
-    {
-        "rebelot/kanagawa.nvim",
-        priority = 1000, -- make sure to load this before all the other start plugins
-        config = function()
-            require("kanagawa").setup({
-                compile = true,   -- enable compiling the colorscheme
-                undercurl = true, -- enable undercurls
-                commentStyle = { italic = true },
-                functionStyle = {},
-                keywordStyle = { italic = true },
-                statementStyle = { bold = true },
-                typeStyle = {},
-                transparent = false,   -- do not set background color
-                dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
-                terminalColors = true, -- define vim.g.terminal_color_{0,17}
-                colors = {             -- add/modify theme and palette colors
-                    theme = {
-                        all = {
-                            ui = {
-                                bg_gutter = "none"
-                            }
-                        }
-                    },
-                },
-                overrides = function(colors) -- add/modify highlights
-                    local theme = colors.theme
-                    return {
-                        NormalFloat = { bg = "none" },
-                        FloatBorder = { bg = "none" },
-                        FloatTitle = { bg = "none" },
+	{
+		"rebelot/kanagawa.nvim",
+		priority = 1000, -- make sure to load this before all the other start plugins
+		config = function()
+			require("kanagawa").setup({
+				compile = true, -- enable compiling the colorscheme
+				undercurl = true, -- enable undercurls
+				commentStyle = { italic = true },
+				functionStyle = {},
+				keywordStyle = { italic = true },
+				statementStyle = { bold = true },
+				typeStyle = {},
+				transparent = true, -- do not set background color
+				dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+				terminalColors = true, -- define vim.g.terminal_color_{0,17}
+				colors = { -- add/modify theme and palette colors
+					theme = {
+						all = {
+							ui = {
+								bg_gutter = "none",
+							},
+						},
+					},
+				},
+				overrides = function(colors) -- add/modify highlights
+					local theme = colors.theme
+					local makeDiagnosticColor = function(color)
+						local c = require("kanagawa.lib.color")
+						return { fg = color, bg = c(color):blend(theme.ui.bg, 0.95):to_hex() }
+					end
 
-                        -- Save an hlgroup with dark background and dimmed foreground
-                        -- so that you can use it where your still want darker windows.
-                        -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
-                        NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+					return {
+						NormalFloat = { bg = "none" },
+						FloatBorder = { bg = "none" },
+						FloatTitle = { bg = "none" },
 
-                        -- Popular plugins that open floats will link to NormalFloat by default;
-                        -- set their background accordingly if you wish to keep them dark and borderless
-                        LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-                        MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-                    }
-                end,
-                theme = "dragon",    -- Load "wave" theme when 'background' option is not set
-                background = {       -- map the value of 'background' option to a theme
-                    dark = "dragon", -- try "dragon" !
-                    light = "lotus"
-                },
-            })
-            vim.cmd([[colorscheme kanagawa]])
-        end
-    },
-    -- {
-    --     "bluz71/vim-nightfly-guicolors",
-    --     priority = 1000, -- make sure to load this before all the other start plugins
-    --     config = function()
-    --         -- load the colorscheme here
-    --         vim.g.nightflyTransparent = true
-    --         vim.cmd([[colorscheme nightfly]])
-    --     end,
-    -- },
-    -- {
-    --   "folke/tokyonight.nvim",
-    --   priority = 1000, -- make sure to load this before all the other start plugins
-    --   config = function()
-    --     local bg = "#011628"
-    --     local bg_dark = "#011423"
-    --     local bg_highlight = "#143652"
-    --     local bg_search = "#0A64AC"
-    --     local bg_visual = "#275378"
-    --     local fg = "#CBE0F0"
-    --     local fg_dark = "#B4D0E9"
-    --     local fg_gutter = "#627E97"
-    --     local border = "#547998"
-    --
-    --     require("tokyonight").setup({
-    --       style = "night",
-    --       on_colors = function(colors)
-    --         colors.bg = bg
-    --         colors.bg_dark = bg_dark
-    --         colors.bg_float = bg_dark
-    --         colors.bg_highlight = bg_highlight
-    --         colors.bg_popup = bg_dark
-    --         colors.bg_search = bg_search
-    --         colors.bg_sidebar = bg_dark
-    --         colors.bg_statusline = bg_dark
-    --         colors.bg_visual = bg_visual
-    --         colors.border = border
-    --         colors.fg = fg
-    --         colors.fg_dark = fg_dark
-    --         colors.fg_float = fg
-    --         colors.fg_gutter = fg_gutter
-    --         colors.fg_sidebar = fg_dark
-    --       end,
-    --     })
-    --     -- load the colorscheme here
-    --     vim.cmd([[colorscheme tokyonight]])
-    --   end,
-    -- },
+						-- Save an hlgroup with dark background and dimmed foreground
+						-- so that you can use it where your still want darker windows.
+						-- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
+						NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+
+						-- Popular plugins that open floats will link to NormalFloat by default;
+						-- set their background accordingly if you wish to keep them dark and borderless
+						LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+						MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+
+						Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency
+						PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
+						PmenuSbar = { bg = theme.ui.bg_m1 },
+						PmenuThumb = { bg = theme.ui.bg_p2 },
+
+						DiagnosticVirtualTextHint = makeDiagnosticColor(theme.diag.hint),
+						DiagnosticVirtualTextInfo = makeDiagnosticColor(theme.diag.info),
+						DiagnosticVirtualTextWarn = makeDiagnosticColor(theme.diag.warning),
+						DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
+					}
+				end,
+				theme = "dragon", -- Load "dragon" theme when 'background' option is not set
+				background = { -- map the value of 'background' option to a theme
+					dark = "dragon", -- try "dragon" !
+					light = "lotus",
+				},
+			})
+			vim.cmd([[colorscheme kanagawa]])
+		end,
+	},
 }
