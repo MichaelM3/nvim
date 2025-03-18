@@ -31,9 +31,10 @@ return {
 					end
 
 					return {
-						NormalFloat = { bg = "none" },
-						FloatBorder = { bg = "none" },
-						FloatTitle = { bg = "none" },
+						-- Floating windows with semi-transparent background and visible borders
+						NormalFloat = { bg = theme.ui.bg_m3 },  -- Using darker background for floats
+						FloatBorder = { bg = theme.ui.bg_m3, fg = theme.ui.special },
+						FloatTitle = { bg = theme.ui.bg_m3, fg = theme.ui.special, bold = true },
 
 						-- Save an hlgroup with dark background and dimmed foreground
 						-- so that you can use it where your still want darker windows.
