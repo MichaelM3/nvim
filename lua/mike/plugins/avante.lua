@@ -3,7 +3,15 @@ return {
   event = "VeryLazy",
   lazy = false,
   opts = {
-    -- add any opts here
+    provider = "claude",
+    claude = {
+      endpoint = "https://api.anthropic.com",
+      model = "claude-3-7-sonnet-latest",
+      timeout = 30000,
+      temperature = 0,
+      max_tokens = 4096,
+      disable_tools = { "python" },
+    }
   },
   -- if you want to download pre-built binary, then pass source=false. Make sure to follow instruction above.
   -- Also note that downloading prebuilt binary is a lot faster comparing to compiling from source.
