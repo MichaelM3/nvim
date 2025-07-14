@@ -32,9 +32,9 @@ return {
 
 					return {
 						-- Floating windows with semi-transparent background and visible borders
-						NormalFloat = { bg = theme.ui.bg_m3 },  -- Using darker background for floats
-						FloatBorder = { bg = theme.ui.bg_m3, fg = theme.ui.special },
-						FloatTitle = { bg = theme.ui.bg_m3, fg = theme.ui.special, bold = true },
+						NormalFloat = { bg = "NONE" }, -- Using darker background for floats
+						FloatBorder = { bg = "NONE", fg = theme.ui.special },
+						FloatTitle = { bg = "NONE", fg = theme.ui.special, bold = true },
 
 						-- Save an hlgroup with dark background and dimmed foreground
 						-- so that you can use it where your still want darker windows.
@@ -43,8 +43,11 @@ return {
 
 						-- Popular plugins that open floats will link to NormalFloat by default;
 						-- set their background accordingly if you wish to keep them dark and borderless
-						LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-						MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+						LazyNormal = { bg = "NONE", fg = theme.ui.fg_dim },
+						MasonNormal = { bg = "NONE", fg = theme.ui.fg_dim },
+						NuiPopup = { bg = "NONE" },
+						NuiBorder = { bg = "NONE", fg = theme.ui.special },
+						AvanteNormal = { bg = "NONE" },
 
 						Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency
 						PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },

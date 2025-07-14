@@ -1,3 +1,8 @@
+
+vim.lsp.client_is_stopped = function(client_id)
+  return vim.lsp.get_client_by_id(client_id) == nil
+end
+
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
