@@ -15,6 +15,34 @@ return {
     local capabilities = cmp_nvim_lsp.default_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+    -- Register LSP configs with Neovim 0.12 native API so checkhealth sees them
+    if vim.lsp and vim.lsp.config then
+      local register = function(name, opts)
+        pcall(vim.lsp.config, name, vim.tbl_extend("keep", opts or {}, { capabilities = capabilities }))
+      end
+      register("cssls")
+      register("emmet_ls", { filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" } })
+      register("gopls")
+      register("graphql", { filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" } })
+      register("html")
+      register("lua_ls", {
+        settings = {
+          Lua = {
+            diagnostics = { globals = { "vim", "kong", "ngx" } },
+            workspace = { library = { [vim.fn.expand("$VIMRUNTIME/lua")] = true, [vim.fn.stdpath("config") .. "/lua"] = true } },
+          },
+        },
+      })
+      register("prismals")
+      register("pyright")
+      register("ruby_lsp")
+      register("rust_analyzer")
+      register("tailwindcss")
+      register("ts_ls", { init_options = { preferences = { disableSuggestions = false } } })
+      -- stylua is a formatter, not LSP; register only if 0.12 treats it as config
+      pcall(vim.lsp.config, "stylua", { capabilities = capabilities })
+    end
+
     -- Create an autocommand for LspAttach to set keybinds
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),

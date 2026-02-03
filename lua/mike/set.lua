@@ -1,3 +1,8 @@
+-- Disable optional providers to avoid healthcheck warnings (re-enable if you need them)
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+-- vim.g.loaded_node_provider = 0
+
 local function set_options(opts)
     for k, v in pairs(opts) do
         vim.opt[k] = v
