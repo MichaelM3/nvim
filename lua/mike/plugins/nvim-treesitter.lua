@@ -2,6 +2,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		event = { "BufReadPre", "BufNewFile" },
+		lazy = false,
 		build = ":TSUpdate",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
@@ -52,6 +53,7 @@ return {
 					"query",
 					"c_sharp",
 				},
+				auto_install = true,
 				incremental_selection = {
 					enable = true,
 					keymaps = {

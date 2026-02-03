@@ -79,12 +79,13 @@ keymap("t", "<C-;>", "<C-\\><C-n>", opts)
 -- Lazy Git
 keymap("n", "<leader>gg", "<cmd>LazyGit<CR>", opts)
 
-function YankInside()
+local function yank_inside()
     local char = vim.fn.getcharstr()
+    if char == nil or char == "" then return end
     vim.cmd("normal! vi" .. char)
     vim.defer_fn(function ()
         vim.cmd('normal! ' .. '"+y')
     end, 50)
 end
 
-keymap("n", "<leader>v", ":lua YankInside()<CR>", opts)
+keymap("n", "<leader>v", yank_inside, opts)
