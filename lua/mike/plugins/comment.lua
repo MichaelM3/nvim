@@ -1,3 +1,5 @@
+-- Built-in commenting (Nvim 0.10+) does not apply this treesitter-aware commentstring
+-- hook for TS/TSX inside JSX; keep Comment.nvim for correct block comments there.
 return {
     "numToStr/Comment.nvim",
     event = { "BufReadPre", "BufNewFile" },

@@ -50,9 +50,9 @@ keymap("n", "<C-f>", "<cmd>silent !tmux new tmux-sessionizer<CR>", opts)
 
 keymap("n", "<leader>W", "<cmd>set wrap!<CR>", opts)
 
--- Quickfix list commands
-keymap("n", "<C-k>", "<cmd>cnext<CR>zz", opts)
-keymap("n", "<C-j>", "<cmd>cprev<CR>zz", opts)
+-- Quickfix / location list (avoid <C-j>/<C-k>: used for window navigation below)
+keymap("n", "<leader>qn", "<cmd>cnext<CR>zz", opts)
+keymap("n", "<leader>qp", "<cmd>cprev<CR>zz", opts)
 keymap("n", "<leader>k", "<cmd>lnext<CR>zz", opts)
 keymap("n", "<leader>j", "<cmd>lprev<CR>zz", opts)
 

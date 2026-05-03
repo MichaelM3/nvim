@@ -39,5 +39,17 @@ set_options({
     -- showtabline = 2
 })
 
+-- Reload buffers when files change externally (e.g. OpenCode AI edits on disk)
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+	group = vim.api.nvim_create_augroup("Autoread", { clear = true }),
+	callback = function()
+		if vim.fn.mode() ~= "c" then
+			vim.cmd.checktime()
+		end
+	end,
+	pattern = "*",
+})
+
 vim.opt.isfname:append("@-@")
 vim.g.mapleader = " "
